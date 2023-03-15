@@ -62,8 +62,7 @@ const logout = (req, res) => {
 
 	const options = {
 		httpOnly: true, //accessible only by web server
-		secure: process.env.NODE_ENV === "production", //https
-		maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT 
+		secure: process.env.NODE_ENV === "production", //https 
 	};
 
 	res.clearCookie("user_token", options);
