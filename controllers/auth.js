@@ -185,5 +185,5 @@ export default {
 	forgotPassword,
 	resetPassword,
 	refresh,
-	logout,
+	logout
 };
