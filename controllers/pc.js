@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler"
 import mongoose from "mongoose"
-import PC from "../models/PC.js"
+import PC from "../models/Pc.js"
 import { countMobileWifiMoney, countMoney } from "../utils/countMoney.js"
 
 const getPcs = asyncHandler(async (req, res, next) => {
