@@ -39,7 +39,7 @@ const login = asyncHandler(async (req, res, next) => {
 	const options = {
 		httpOnly: true, //accessible only by web server
 		secure: process.env.NODE_ENV === "production", //https
-		SameSite: "Lux", //cross-site cookie
+		sameSite: 'None', //cross-site cookie 
 		maxAge: 7 * 24 * 60 * 60 * 1000, //cookie expiry: set to match rT
 	};
 
@@ -63,7 +63,7 @@ const logout = (req, res) => {
 	const options = {
 		httpOnly: true, //accessible only by web server
 		secure: process.env.NODE_ENV === "production", //https
-		SameSite: "Lux", //cross-site cookie 
+		maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT 
 	};
 
 	res.clearCookie("user_token", options);

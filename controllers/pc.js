@@ -4,7 +4,7 @@ import PC from "../models/Pc.js"
 import { countMobileWifiMoney, countMoney } from "../utils/countMoney.js"
 
 const getPcs = asyncHandler(async (req, res, next) => {
-	const pcs = await PC.find({})
+	const pcs = await PC.find({});
 
 	res.json(pcs)
 })
@@ -61,9 +61,6 @@ const withdrawalPc = asyncHandler(async (req, res, next) => {
 	res.status(200).json({ pc, passTime: { sharFileAndWifiTime, mobileWifiTime } })
 })
 
-// @desc    Get Frequetly Ask Questions
-// @route   GET /api/v1/admin/FAQ/:id
-// @access  private
 const deletePc = asyncHandler(async (req, res, next) => {
 	const { params } = req
 

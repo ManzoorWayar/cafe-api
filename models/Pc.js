@@ -16,6 +16,7 @@ const PcSchema = new mongoose.Schema(
       default: null
     },
     message: String,
+    SpendMoneyDesc: String,
     isGenerator: {
       type: Boolean,
       default: false,
@@ -51,6 +52,10 @@ const PcSchema = new mongoose.Schema(
       // required: true
     },
     totalAmount: {
+      type: Number,
+      deafult: 0
+    },
+    spendMoney: {
       type: Number,
       deafult: 0
     },
