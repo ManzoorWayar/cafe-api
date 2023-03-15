@@ -1,0 +1,19 @@
+{
+    "confirm-password": "تأیید رمز عبور مطابقت ندارد.",
+    "invalid": "{{key}} نا معتبر است.",
+    "required": "{{key}} مورد نیاز است.",
+    "not-found": "{{key}} یافت نشد.",
+    "provide": "لطفا یک {{key}} ارائه دهید",
+    "enum": "{{key.name}} باید یکی از موارد زیر باشد {{ key.value }}",
+    "length": "سوال باید بین ۲۰ تا ۲۰۰ حرف باشد.",
+    "already-exists": "{{key}} از قبل وجود دارد.",
+    "allowed-format": "!مجاز هستند png و jpg, jpeg فقط فرمت های",
+    "allowed-formats": "!مجاز هستند png و jpg, pdf, jpeg فقط فرمت های",
+    "strong-password": "لطفا از رمز عبور قوی استفاده کنید. (حروف، اعداد، اشکال)",
+    "image-double-selection": "شما می توانید تصویر را آپلود کرده و یا از رسانه انتخاب کنید.",
+    "character-limit": " محدودیت ذخیره سازی  {{key}} کاراکتر",
+    "max-character": "{{key.name}} نباید بیشتر از {{ key.value }} کاراکتر باشد.",
+    "min-character": "{{key.name}} باید بیشتر از {{ key.value }} کاراکتر باشد.",
+    "size-attachment": "{{key.name}} نباید بیشتر از {{ key.value }} باشد.",
+    "integer": "{{key}} باید یک عدد مثبت  باشد."
+}

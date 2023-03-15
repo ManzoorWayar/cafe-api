@@ -1,0 +1,15 @@
+{
+  "verify-email": "تائید ایمیل آدرس",
+  "please-verify-email": "لطفا ایمیل آدرس خود را تائید کنید",
+  "verify-now": "تائید",
+  "hi": "سلام",
+  "thanks-for": "تشکر برای {{key}}",
+  "signing-up": "ایجاد حساب",
+  "join-message": "لطفا ایمیل خود را با کلیک رو لینک زیر تائید کرده و به انجمن خلاق ما بپیوندید.",
+  "did-not-signup-message": "اگر شما درخواست ایجاد حساب کاربری رهانت را نکرده اید این ایمیل را نادیده گرفته و یا با ما درتماس شوید",
+  "not-sure-why-received-this": "مطمئن نیستید که چرا این ایمیل را دریافت کرده اید؟ لطفا ما را <a href=\"mailto:{{email}}\" class=\"hover-underline\" style=\"font-family: 'Kalameh', sans-serif; mso-line-height-rule: exactly; color: #00b8a5; text-decoration: none;\">در جریان</a> بگذارید.",
+  "thanks": "سپاس",
+  "rahanet-support-team": "تیم پشتیبانی رهانت",
+  "email-validation-note": "نوت: این پیوند تنها برای مدت {{time}} دقیقه مورد اعتبار است.",
+  "resend": "ارسال دوباره"
+}

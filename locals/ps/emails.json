@@ -1,0 +1,15 @@
+{
+  "verify-email": "د بریښنالیک پته تایید کړئ",
+  "please-verify-email": "مهرباني وکړئ خپل بریښنالیک آدرس تایید کړئ",
+  "verify-now": "اوس تصدیق کړئ",
+  "hi": "سلام",
+  "thanks-for": "لپاره مننه {{key}}",
+  "signing-up": "د لاسلیک کول",
+  "join-message": "مهرباني وکړئ د لاندې تڼۍ په کلیک کولو سره خپل بریښنالیک آدرس تایید کړئ او زموږ په تخلیقي ټولنې کې شامل شئ",
+  "did-not-signup-message": "که تاسو د رهانت حساب ته لاسلیک نه کړئ، مهرباني وکړئ دا بریښنالیک له پامه غورځوئ یا موږ سره اړیکه ونیسئ",
+  "not-sure-why-received-this": "ډاډه نه یاست چې ولې تاسو دا بریښنالیک ترلاسه کړی؟ مهرباني وکړئ . <a href=\"mailto:{{email}}\" class=\"hover-underline\" style=\"font-family: 'Kalameh', sans-serif; mso-line-height-rule: exactly; color: #00b8a5; text-decoration: none;\">موږ ته خبر راکړئ</a>.",
+  "thanks": "مننه",
+  "rahanet-support-team": "د رهانت د ملاتړ ټیم",
+  "email-validation-note": "یادونه: دا لینک یوازې د {{time}} دقیقو لپاره اعتبار لري.",
+  "resend": "بیا لیږل"
+}

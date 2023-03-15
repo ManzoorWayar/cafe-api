@@ -1,0 +1,12 @@
+{
+  "confirm_password": "تایید - پټنوم سره سمون نه خوري.",
+  "invalid": "{{key}} ناسم دی.",
+  "required": "{{key}} اړین دی.",
+  "not-found": "{{key}} ونه موندل شو.",
+  "length": "پوشتنه باید ترمنخ ۲۰ تر ۲۰۰ حرف اوسی.",
+  "provide": "مهرباني وکړئ یو {{key}} ورکړئ",
+  "already-exists": "{{key}} لا دمخه شتون لري.",
+  "allowed-format": "!بڼې اجازه لري png، jpg او jpeg یوازې",
+  "image-double-selection": "تاسو کولی شئ عکس اپلوډ کړئ یا د میډیا څخه یو غوره کړئ",
+  "character-limit": "{{key}} حروف د ذخیرې حد"
+}

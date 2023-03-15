@@ -1,0 +1,15 @@
+{
+    "confirm-password": "Confirm-Password does not match.",
+    "invalid": "Invalid {{key}}.",
+    "required": "{{key}} is required.",
+    "not-found": "{{key}} Not Found.",
+    "provide": "Please provide a {{key}}.",
+    "enum": "{{key.name}} must be of either {{key.value}}.",
+    "valid-number": "{{key}} must be of type number.",
+    "strong-password": "{{key}} must be 8 characters containing (Uppercase, lowercase, special characters, number).",
+    "already-exists": "{{key}} already exists.",
+    "already-update": "{{key}} already exists.",
+    "allowed-format": "Only .png, .jpg and .jpeg formats are allowed!",
+    "image-double-selection": "You can either upload image or select an one from media",
+    "character-limit": "{{key}} character storage limit"
+}

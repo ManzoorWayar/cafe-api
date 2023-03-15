@@ -1,0 +1,15 @@
+{
+  "verify-email": "Verify Email Address",
+  "please-verify-email": "Please verify your email address",
+  "verify-now": "Verify Now",
+  "hi": "Hi",
+  "thanks-for": "Thanks for {{key}}",
+  "signing-up": "Signing Up",
+  "join-message": "Please verify your email address by clicking the below button and join our creative community",
+  "did-not-signup-message": "If you did not sign up to Rahanet account, please ignore this email or contact us at",
+  "not-sure-why-received-this": "Not sure why you received this email? Please <a href=\"mailto:{{email}}\" class=\"hover-underline\" style=\"font-family: 'Kalameh', sans-serif; mso-line-height-rule: exactly; color: #00b8a5; text-decoration: none;\">let us know</a>.",
+  "thanks": "Thanks",
+  "rahanet-support-team": "The Rahanet support team",
+  "email-validation-note": "Note: This link is only valid for {{time}} minutes",
+  "resend": "Resend"
+}
