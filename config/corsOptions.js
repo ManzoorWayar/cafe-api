@@ -1,10 +1,8 @@
 const allowedOrigins = [
 	"http://localhost:3000",
 	"http://localhost:3001",
-	"http://localhost:3002",
 	"http://192.168.157.244:3000",
-	"https://rahanet.netlify.app",
-	"https://rahanetisp.netlify.app",
+	"https://romannet.netlify.app",
 ]
 
 const corsOptions = {
