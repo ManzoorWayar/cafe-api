@@ -7,6 +7,11 @@ const deafultGenerator = 10    // By Generator add 10 afg for everything
 export const countMoney = (body) => {
     let payment = 0;
 
+    if (!body.pc) {
+        payment = 0
+        return [payment, 0];
+    }
+
     const [wifiValue, halfWifiValue] = speedAscertain(body.speed)
     const passedTime = generateTimeDeff(body.from)
 

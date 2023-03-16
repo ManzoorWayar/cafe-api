@@ -12,7 +12,7 @@ const getPcs = asyncHandler(async (req, res, next) => {
 const createPc = asyncHandler(async (req, res) => {
 	const { body, user } = req
 
-	// body.creatorId = user.id 
+	body.creatorId = user.id
 
 	const pc = await PC.create(body)
 
@@ -58,7 +58,7 @@ const withdrawalPc = asyncHandler(async (req, res, next) => {
 		throw new Error("PC Not Found")
 	}
 
-	res.status(200).json({ pc, passTime: { sharFileAndWifiTime, mobileWifiTime } })
+	res.status(200).json({ pc, passTime: { sharFileAndWifiTime, mobileWifiTime, sharFileAndWifi, mobileWifi } })
 })
 
 const deletePc = asyncHandler(async (req, res, next) => {

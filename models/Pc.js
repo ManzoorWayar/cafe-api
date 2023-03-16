@@ -47,10 +47,6 @@ const PcSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    code: {
-      type: String,
-      // required: true
-    },
     totalAmount: {
       type: Number,
       deafult: 0
