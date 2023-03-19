@@ -62,6 +62,7 @@ const logout = (req, res) => {
 
 	const options = {
 		httpOnly: true, //accessible only by web server
+		sameSite: 'None', //cross-site cookie 
 		secure: process.env.NODE_ENV === "production", //https 
 	};
 
