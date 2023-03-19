@@ -18,6 +18,9 @@ router.route('/pc/:id')
 router.route('/pc/withdrawal/:id')
     .put(PcController.withdrawalPc)
 
+router.route('/pc/report')
+    .get(PcController.generateReport)
+
 router.route('/pc/:id')
     .delete(PcController.deletePc)
 

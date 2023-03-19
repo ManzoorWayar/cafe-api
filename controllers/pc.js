@@ -1,10 +1,19 @@
-import asyncHandler from "express-async-handler"
+import moment from 'moment'
 import mongoose from "mongoose"
 import PC from "../models/Pc.js"
+import asyncHandler from "express-async-handler"
 import { countMobileWifiMoney, countMoney } from "../utils/countMoney.js"
 
 const getPcs = asyncHandler(async (req, res, next) => {
-	const pcs = await PC.find({});
+	const start = moment().startOf('day').toDate()
+	const end = moment().startOf('day').add(1, 'day').toDate()
+
+	const pcs = await PC.find({
+		createdAt: {
+			$gte: start, $lt: end
+		}
+	})
+		.populate('creatorId', 'firstName lastName');
 
 	res.json(pcs)
 })
@@ -76,12 +85,33 @@ const deletePc = asyncHandler(async (req, res, next) => {
 	res.json({})
 })
 
+const generateReport = asyncHandler(async (req, res, next) => {
+	// Copy req.query
+	const reqQuery = { ...req.query };
+
+	// Create query string
+	let queryStr = JSON.stringify(reqQuery);
+
+	// Create operators ($gt, $gte, etc)
+	queryStr = queryStr.replace(
+		/\b(gt|gte|lt|lte|in)\b/g,
+		(match) => `$${match}`
+	);
+
+	let reports = await PC.find({
+		// createdAt: JSON.parse(queryStr)
+	})
+
+	res.json(reports)
+})
+
 const PcController = {
 	getPcs,
 	createPc,
 	updatePc,
 	deletePc,
 	withdrawalPc,
+	generateReport,
 }
 
 export default PcController
