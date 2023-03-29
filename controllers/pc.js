@@ -33,7 +33,7 @@ const updatePc = asyncHandler(async (req, res, next) => {
 
 	if (!mongoose.isValidObjectId(params.id)) return next()
 
-	body.mobileFrom = new Date()
+	body.mobileFrom = body.isUsingMobileWifi ? new Date() : undefined
 
 	const pc = await PC.findByIdAndUpdate(params.id, body, { new: true })
 
@@ -86,22 +86,67 @@ const deletePc = asyncHandler(async (req, res, next) => {
 })
 
 const generateReport = asyncHandler(async (req, res, next) => {
-	// Copy req.query
-	const reqQuery = { ...req.query };
+	// let reports = await PC.aggregate([
+	// 	{ $addFields: { "month": { $month: '$createdAt' } } },
+	// 	{ $match: { month: 2 } }
+	// ]);
 
-	// Create query string
-	let queryStr = JSON.stringify(reqQuery);
+	const { year, month, day } = req.query
+	console.log(req.query);
+	const reportByMonth = [
+		{
+			"$eq": [
+				{
+					$month: "$createdAt"
+				},
+				month
+			]
+		},
+		{
+			"$eq": [
+				{
+					$year: "$createdAt"
+				},
+				year
+			]
+		}
+	]
 
-	// Create operators ($gt, $gte, etc)
-	queryStr = queryStr.replace(
-		/\b(gt|gte|lt|lte|in)\b/g,
-		(match) => `$${match}`
-	);
+	const reportByDay = [
+		{
+			"$eq": [
+				{
+					$month: "$createdAt"
+				},
+				month.replace(/(^|-)0+/g, "$1")
+			]
+		},
+		{
+			"$eq": [
+				{
+					$year: "$createdAt"
+				},
+				year
+			]
+		},
+		{
+			"$eq": [
+				{
+					$dayOfMonth: "$createdAt"
+				},
+				day.replace(/(^|-)0+/g, "$1")
+			]
+		}
+	]
 
-	let reports = await PC.find({
-		// createdAt: JSON.parse(queryStr)
+	const reportResult = day ? reportByDay : reportByMonth
+
+	const reports = await PC.find({
+		$expr: {
+			$and: reportResult
+		}
 	})
-
+	console.log(reports.length);
 	res.json(reports)
 })
 
