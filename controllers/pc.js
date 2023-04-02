@@ -85,69 +85,17 @@ const deletePc = asyncHandler(async (req, res, next) => {
 	res.json({})
 })
 
-const generateReport = asyncHandler(async (req, res, next) => {
-	// let reports = await PC.aggregate([
-	// 	{ $addFields: { "month": { $month: '$createdAt' } } },
-	// 	{ $match: { month: 2 } }
-	// ]);
-
-	const { year, month, day } = req.query
-	console.log(req.query);
-	const reportByMonth = [
-		{
-			"$eq": [
-				{
-					$month: "$createdAt"
-				},
-				month
-			]
-		},
-		{
-			"$eq": [
-				{
-					$year: "$createdAt"
-				},
-				year
-			]
-		}
-	]
-
-	const reportByDay = [
-		{
-			"$eq": [
-				{
-					$month: "$createdAt"
-				},
-				month.replace(/(^|-)0+/g, "$1")
-			]
-		},
-		{
-			"$eq": [
-				{
-					$year: "$createdAt"
-				},
-				year
-			]
-		},
-		{
-			"$eq": [
-				{
-					$dayOfMonth: "$createdAt"
-				},
-				day.replace(/(^|-)0+/g, "$1")
-			]
-		}
-	]
-
-	const reportResult = day ? reportByDay : reportByMonth
-
+const generateReport = asyncHandler(async (req, res, next) => { 
+	 const {startDate, endDate} = req.query
+ 
 	const reports = await PC.find({
-		$expr: {
-			$and: reportResult
+		createdAt: {
+			$gte: new Date(new Date(startDate).setHours('00', '00', '00')),
+			$lt: new Date(new Date(endDate).setHours(23, 59, 59))
 		}
 	})
-	console.log(reports.length);
-	res.json(reports)
+ 
+	res.status(200).json(reports)
 })
 
 const PcController = {
@@ -160,3 +108,64 @@ const PcController = {
 }
 
 export default PcController
+
+
+// const reportByMonth = [
+	// 	{
+	// 		"$eq": [
+	// 			{
+	// 				$month: "$createdAt"
+	// 			},
+	// 			month
+	// 		]
+	// 	},
+	// 	{
+	// 		"$eq": [
+	// 			{
+	// 				$year: "$createdAt"
+	// 			},
+	// 			year
+	// 		]
+	// 	}
+	// ]
+
+	// const reportByDay = [
+	// 	{
+	// 		"$eq": [
+	// 			{
+	// 				$month: "$createdAt"
+	// 			},
+	// 			month.replace(/(^|-)0+/g, "$1")
+	// 		]
+	// 	},
+	// 	{
+	// 		"$eq": [
+	// 			{
+	// 				$year: "$createdAt"
+	// 			},
+	// 			year
+	// 		]
+	// 	},
+	// 	{
+	// 		"$eq": [
+	// 			{
+	// 				$dayOfMonth: "$createdAt"
+	// 			},
+	// 			day.replace(/(^|-)0+/g, "$1")
+	// 		]
+	// 	}
+	// ]
+
+	// const reportResult = day ? reportByDay : reportByMonth
+
+	// const reports = await PC.find({
+	// 	$expr: {
+	// 		$and: reportResult
+	// 	}
+	// })
+
+	
+	// let reports = await PC.aggregate([
+	// 	{ $addFields: { "month": { $month: '$createdAt' } } },
+	// 	{ $match: { month: 2 } }
+	// ]);
